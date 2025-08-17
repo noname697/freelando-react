@@ -6,12 +6,12 @@ const tema = {
     atencao: "",
     focus: "",
     primarias: {
-      a: "",
+      a: "#5754ED",
       b: "",
       c: "",
     },
     secundarias: {
-      a: "",
+      a: "#EBEAF9",
       b: "",
       c: "",
     },
