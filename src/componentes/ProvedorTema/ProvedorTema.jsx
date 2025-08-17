@@ -26,6 +26,10 @@ const tema = {
       b: "",
     },
   },
+  espacamentos: {
+    s: "16px",
+    l: "32px",
+  },
 };
 
 const ProvedorTema = ({ children }) => {
