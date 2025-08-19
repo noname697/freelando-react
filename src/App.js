@@ -1,4 +1,5 @@
 import Cabecalho from "./componentes/Cabecalho/Cabecelho";
+import CampoTexto from "./componentes/CampoTexto/CampoTexto";
 import Card from "./componentes/Card/Card";
 import Estilos from "./componentes/EstilosGlobais/Estilos";
 import ProvedorTema from "./componentes/ProvedorTema/ProvedorTema";
@@ -18,6 +19,7 @@ function App() {
           freelancers. Em seguida, você poderá dar mais detalhes sobre suas
           demandas e sobre sua forma de trabalho.
         </Tipografia>
+        <CampoTexto titulo="Nome Completo"/>
       </Card>
     </ProvedorTema>
   );
