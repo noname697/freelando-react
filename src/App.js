@@ -14,7 +14,7 @@ const App = () => {
       <Cabecalho />
       <Container>
         <Row justify="center">
-          <Col lg={6}>
+          <Col lg={6} md={8} sm={12}>
             <Card>
               <Tipografia variante="h1" componente="h1">
                 Freelando
