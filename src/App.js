@@ -6,7 +6,7 @@ import ProvedorTema from "./componentes/ProvedorTema/ProvedorTema";
 import Rodape from "./componentes/Rodape/Rodape";
 import Tipografia from "./componentes/Tipografia/Tipografia";
 
-function App() {
+const App = () => {
   return (
     <ProvedorTema>
       <Estilos />
