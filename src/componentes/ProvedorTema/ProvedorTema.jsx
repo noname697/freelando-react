@@ -2,12 +2,12 @@ import { ThemeProvider } from '@emotion/react'
 
 const tema = {
     cores: {
-        branco: '',
+        branco: '#FFF',
         atencao: '',
-        focus: '',
+        focus: '#8009FF',
         primarias: {
             a: '#5754ED',
-            b: '',
+            b: '#D93114',
             c: ''
         },
         secundarias: {
@@ -33,6 +33,7 @@ const tema = {
     },
     fontFamily: "'Montserrat', sans-serif"
 }
+
 
 const ProvedorTema = ({ children }) => {
     return <ThemeProvider theme={tema}>
