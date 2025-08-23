@@ -15,6 +15,7 @@ import { IconeTwitch } from "./componentes/Icones/IconeTwitch";
 import { IconeInstagram } from "./componentes/Icones/IconeInstagram";
 import { IconeTwitter } from "./componentes/Icones/IconeTwitter";
 import { IconeWhatsApp } from "./componentes/Icones/IconeWhatsApp";
+import ListaSuspensa from "./componentes/ListaSuspensa/ListaSuspensa";
 
 const App = () => {
   return (
@@ -51,7 +52,7 @@ const App = () => {
               </Row>
               <Row>
                 <Col lg={4} md={4} sm={4}>
-                  <CampoTexto titulo="Estado" />
+                  <ListaSuspensa titulo="Estado" />
                 </Col>
                 <Col lg={8} md={8} sm={8}>
                   <CampoTexto titulo="Cidade" />
