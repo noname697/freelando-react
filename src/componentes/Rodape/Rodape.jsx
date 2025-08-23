@@ -7,8 +7,8 @@ const RodapeEstilizado = styled.footer`
   height: 100px;
 `;
 
-const Rodape = () => {
-  return <RodapeEstilizado></RodapeEstilizado>;
+const Rodape = ({ children }) => {
+  return <RodapeEstilizado>{children}</RodapeEstilizado>;
 };
 
 export default Rodape;
