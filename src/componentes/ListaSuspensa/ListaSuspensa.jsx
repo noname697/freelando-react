@@ -79,6 +79,9 @@ const ListaSupensa = ({ titulo, opcoes }) => {
           if (focoAntigo === null) {
             return 0;
           }
+          if (focoAntigo === opcoes.length - 1) {
+            return opcoes.length - 1;
+          }
           return (focoAntigo += 1);
         });
         break;
@@ -96,6 +99,15 @@ const ListaSupensa = ({ titulo, opcoes }) => {
         setOpcaoFocada(null);
         alternarVisibilidade(false);
         setOpcaoSelecionada(opcoes[opcaoFocada]);
+        break;
+      case "Tab":
+        evento.preventDefault();
+        setOpcaoFocada(null);
+        alternarVisibilidade(false);
+        break;
+      case "Escape":
+        setOpcaoFocada(null);
+        alternarVisibilidade(false);
         break;
       default:
         break;
