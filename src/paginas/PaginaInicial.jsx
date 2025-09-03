@@ -1,18 +1,8 @@
-import { Col, Container, Row } from "react-grid-system";
-import Cabecalho from "../componentes/Cabecalho/Cabecelho";
+import { Col, Row } from "react-grid-system";
 import CampoTexto from "../componentes/CampoTexto/CampoTexto";
 import Card from "../componentes/Card/Card";
-import Rodape from "../componentes/Rodape/Rodape";
 import Tipografia from "../componentes/Tipografia/Tipografia";
 import Botao from "../componentes/Botao/Botao";
-import FreelandoLogo from "../componentes/Icones/FreelandoLogo";
-import Link from "../componentes/Link/Link";
-import ListaInline from "../componentes/ListaInline/ListaInline";
-import ItemListaInline from "../componentes/ItemListaInline/ItemListaInline";
-import { IconeTwitch } from "../componentes/Icones/IconeTwitch";
-import { IconeInstagram } from "../componentes/Icones/IconeInstagram";
-import { IconeTwitter } from "../componentes/Icones/IconeTwitter";
-import { IconeWhatsApp } from "../componentes/Icones/IconeWhatsApp";
 import ListaSuspensa from "../componentes/ListaSuspensa/ListaSuspensa";
 
 const estadosBrasileiros = [
@@ -48,18 +38,6 @@ const estadosBrasileiros = [
 const PaginaInicial = () => {
   return (
     <>
-      <Cabecalho>
-        <Container>
-          <Row align="center">
-            <Col>
-              <FreelandoLogo />
-            </Col>
-            <Col style={{ textAlign: "right" }}>
-              <Link>Login</Link>
-            </Col>
-          </Row>
-        </Container>
-      </Cabecalho>
       <Row justify="center">
         <Col
           xxx={6}
@@ -118,46 +96,6 @@ const PaginaInicial = () => {
           </Card>
         </Col>
       </Row>
-      <Rodape>
-        <Container>
-          <Row align="center">
-            <Col>
-              <FreelandoLogo height={40} width={176} />
-              <Tipografia variante="legenda" componente="legenda">
-                Desenvolvido por Arthur Manenti. Projeto fictício sem fins
-                comerciais.
-              </Tipografia>
-            </Col>
-            <Col style={{ textAlign: "right" }}>
-              <Tipografia variante="legenda" componente="legenda">
-                Acesse nossas redes:
-              </Tipografia>
-              <ListaInline>
-                <ItemListaInline>
-                  <a href="/" aria-label="Link para o WhatsApp">
-                    <IconeWhatsApp />
-                  </a>
-                </ItemListaInline>
-                <ItemListaInline>
-                  <a href="/" aria-label="Link para a Twitch">
-                    <IconeTwitch />
-                  </a>
-                </ItemListaInline>
-                <ItemListaInline>
-                  <a href="/" aria-label="Link para a Instagram">
-                    <IconeInstagram />
-                  </a>
-                </ItemListaInline>
-                <ItemListaInline>
-                  <a href="/" aria-label="Link para a Twitter">
-                    <IconeTwitter />
-                  </a>
-                </ItemListaInline>
-              </ListaInline>
-            </Col>
-          </Row>
-        </Container>
-      </Rodape>
     </>
   );
 };
