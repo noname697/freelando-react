@@ -10,7 +10,7 @@ const LabelEstilizada = styled.label`
   padding: ${(props) => props.theme.espacamentos.xs};
   &:hover {
     &:before {
-      border-color: ${(props) => props.theme.cores.focus};
+      border-color: ${(props) => props.theme.cores.primarias.b};
     }
   }
   &:before {
@@ -37,16 +37,12 @@ const LabelEstilizada = styled.label`
 const InputEscondido = styled.input`
   appearance: none;
   opacity: 0;
-  &:focus + label {
-    border-radius: 16px;
-    border: 1px solid;
-    border-color: ${(props) => props.theme.cores.focus};
-  }
 `;
 
 const Radio = ({ valor, label, checked, onClick }) => (
   <>
     <InputEscondido
+      required
       type="radio"
       valor={valor}
       checked={checked}
