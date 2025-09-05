@@ -1,8 +1,8 @@
-import Tipografia from "../../componentes/Tipografia/Tipografia";
 import { Col, Row } from "react-grid-system";
 import Botao from "../../componentes/Botao/Botao";
 import CampoTexto from "../../componentes/CampoTexto/CampoTexto";
 import ListaSuspensa from "../../componentes/ListaSuspensa/ListaSuspensa";
+import CabecalhoCadastro from "../../componentes/CabecalhoCadastro/CabecalhoCadastro";
 import { Link } from "react-router-dom";
 
 const estadosBrasileiros = [
@@ -38,16 +38,12 @@ const estadosBrasileiros = [
 const DadosPessoais = () => {
   return (
     <div>
-      <div style={{ textAlign: "center" }}>
-        <Tipografia variante="h1" componente="h1">
-          Crie seu cadastro
-        </Tipografia>
-        <Tipografia variante="body" componente="body">
-          Crie seu perfil gratuitamente para começar a trabalhar com os melhores
-          freelancers. Em seguida, você poderá dar mais detalhes sobre suas
-          demandas e sobre sua forma de trabalho.
-        </Tipografia>
-      </div>
+      <CabecalhoCadastro
+        titulo="Crie seu cadastro"
+        descricao="Crie seu perfil gratuitamente para começar a trabalhar com os melhores
+     freelancers. Em seguida, você poderá dar mais detalhes sobre suas
+    demandas e sobre sua forma de trabalho."
+      />
       <Row>
         <Col>
           <CampoTexto titulo="Nome Completo" />
@@ -76,9 +72,9 @@ const DadosPessoais = () => {
       </Row>
       <Row>
         <Col lg={6} md={6} sm={6}>
-        <Link to="..">
-          <Botao variante="secundaria">Anterior</Botao>
-        </Link>
+          <Link to="..">
+            <Botao variante="secundaria">Anterior</Botao>
+          </Link>
         </Col>
         <Col lg={6} md={6} sm={6}>
           <div style={{ textAlign: "right" }}>

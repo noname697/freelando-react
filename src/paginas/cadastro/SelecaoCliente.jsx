@@ -3,17 +3,16 @@ import Tipografia from "../../componentes/Tipografia/Tipografia";
 import cliente from "./assets/cliente.png";
 import freelancer from "./assets/freela.png";
 import Link from "../../componentes/Link/Link";
+import CabecalhoCadastro from "../../componentes/CabecalhoCadastro/CabecalhoCadastro";
 import { Link as RouterLink } from "react-router-dom";
 
 const SelecaoCliente = () => {
   return (
     <div style={{ textAlign: "center" }}>
-      <Tipografia variante="h1" componente="h1">
-        Crie seu cadastro
-      </Tipografia>
-      <Tipografia variante="h3" componente="h3">
-        Como podemos te ajudar?
-      </Tipografia>
+      <CabecalhoCadastro
+        titulo=" Crie seu cadastro"
+        subtitulo="Como podemos te ajudar?"
+      />
       <Row>
         <Col md={6} sm={12}>
           <RouterLink to="interesses">

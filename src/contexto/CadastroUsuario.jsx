@@ -24,8 +24,8 @@ export const CadastroUsuarioContext = createContext({
 });
 
 export const useCadastroUsuarioContext = () => {
-return useState(CadastroUsuarioContext);
-}
+  return useState(CadastroUsuarioContext);
+};
 
 export const CadastroUsuarioProvider = ({ children }) => {
   const [usuario, setUsuario] = useState(usuarioInicial);
