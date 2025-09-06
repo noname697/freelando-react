@@ -45,9 +45,16 @@ const DadosPessoais = () => {
     setEmail,
     setSenha,
     setSenhaConfirmada,
+    submeterUsuario
   } = useCadastroUsuarioContext();
+
+  const finalizarCadastro = (e) => {
+    e.preventDefault();
+    submeterUsuario()
+  };
+
   return (
-    <div>
+    <form onSubmit={finalizarCadastro}>
       <CabecalhoCadastro
         titulo="Crie seu cadastro"
         descricao="Crie seu perfil gratuitamente para começar a trabalhar com os melhores
@@ -113,13 +120,13 @@ const DadosPessoais = () => {
         </Col>
         <Col lg={6} md={6} sm={6}>
           <div style={{ textAlign: "right" }}>
-            <Link to="/cadastro/concluido">
-              <Botao>Próximo</Botao>
-            </Link>
+            {/* <Link to="/cadastro/concluido"> */}
+            <Botao>Próximo</Botao>
+            {/* </Link> */}
           </div>
         </Col>
       </Row>
-    </div>
+    </form>
   );
 };
 

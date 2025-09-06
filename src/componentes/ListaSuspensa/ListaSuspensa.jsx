@@ -97,7 +97,7 @@ const ListaSupensa = ({ titulo, opcoes, valor, onChange }) => {
         evento.preventDefault();
         setOpcaoFocada(null);
         alternarVisibilidade(false);
-        onChange(opcoes[opcaoFocada])
+        onChange(opcoes[opcaoFocada]);
         break;
       case "Tab":
         evento.preventDefault();
@@ -120,6 +120,7 @@ const ListaSupensa = ({ titulo, opcoes, valor, onChange }) => {
         estaAberta={estaAberta}
         onClick={() => alternarVisibilidade(!estaAberta)}
         onKeyDown={manipularTeclaDoTeclado}
+        type="button"
       >
         <div>{valor ? valor.text : "Selecione"}</div>
         <div>
