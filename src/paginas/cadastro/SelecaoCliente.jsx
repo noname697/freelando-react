@@ -5,8 +5,10 @@ import freelancer from "./assets/freela.png";
 import Link from "../../componentes/Link/Link";
 import CabecalhoCadastro from "../../componentes/CabecalhoCadastro/CabecalhoCadastro";
 import { Link as RouterLink } from "react-router-dom";
+import {useCadastroUsuarioContext} from "../../contexto/CadastroUsuario"
 
 const SelecaoCliente = () => {
+  const { setPerfil } = useCadastroUsuarioContext()
   return (
     <div style={{ textAlign: "center" }}>
       <CabecalhoCadastro
@@ -15,7 +17,7 @@ const SelecaoCliente = () => {
       />
       <Row>
         <Col md={6} sm={12}>
-          <RouterLink to="interesses">
+          <RouterLink to="interesses" onClick={() => setPerfil("cliente")}>
             <img src={cliente} alt="" />
             <Tipografia variante="body" componente="body">
               Sou cliente e preciso de um freela!

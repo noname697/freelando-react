@@ -4,6 +4,7 @@ import CampoTexto from "../../componentes/CampoTexto/CampoTexto";
 import ListaSuspensa from "../../componentes/ListaSuspensa/ListaSuspensa";
 import CabecalhoCadastro from "../../componentes/CabecalhoCadastro/CabecalhoCadastro";
 import { Link } from "react-router-dom";
+import { useCadastroUsuarioContext } from "../../contexto/CadastroUsuario";
 
 const estadosBrasileiros = [
   { text: "Acre", value: "AC" },
@@ -36,6 +37,15 @@ const estadosBrasileiros = [
 ];
 
 const DadosPessoais = () => {
+  const {
+    usuario,
+    setNomeCompleto,
+    setUf,
+    setCidade,
+    setEmail,
+    setSenha,
+    setSenhaConfirmada,
+  } = useCadastroUsuarioContext();
   return (
     <div>
       <CabecalhoCadastro
@@ -46,28 +56,53 @@ const DadosPessoais = () => {
       />
       <Row>
         <Col>
-          <CampoTexto titulo="Nome Completo" />
+          <CampoTexto
+            titulo="Nome Completo"
+            valor={usuario.nomeCompleto}
+            onChange={setNomeCompleto}
+          />
         </Col>
       </Row>
       <Row>
         <Col lg={4} md={4} sm={4}>
-          <ListaSuspensa titulo="Estado" opcoes={estadosBrasileiros} />
+          <ListaSuspensa
+            titulo="Estado"
+            opcoes={estadosBrasileiros}
+            valor={usuario.uf}
+            onChange={setUf}
+          />
         </Col>
         <Col lg={8} md={8} sm={8}>
-          <CampoTexto titulo="Cidade" />
+          <CampoTexto
+            titulo="Cidade"
+            valor={usuario.cidade}
+            onChange={setCidade}
+          />
         </Col>
       </Row>
       <Row>
         <Col>
-          <CampoTexto titulo="E-mail" />
+          <CampoTexto
+            titulo="E-mail"
+            valor={usuario.email}
+            onChange={setEmail}
+          />
         </Col>
       </Row>
       <Row>
         <Col lg={6} md={6} sm={6}>
-          <CampoTexto titulo="Senha" />
+          <CampoTexto
+            titulo="Senha"
+            valor={usuario.senha}
+            onChange={setSenha}
+          />
         </Col>
         <Col lg={6} md={6} sm={6}>
-          <CampoTexto titulo="Repita a Senha" />
+          <CampoTexto
+            titulo="Repita a Senha"
+            valor={usuario.senhaConfirmada}
+            onChange={setSenhaConfirmada}
+          />
         </Col>
       </Row>
       <Row>
