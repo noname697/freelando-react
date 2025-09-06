@@ -3,8 +3,9 @@ import Botao from "../../componentes/Botao/Botao";
 import CampoTexto from "../../componentes/CampoTexto/CampoTexto";
 import ListaSuspensa from "../../componentes/ListaSuspensa/ListaSuspensa";
 import CabecalhoCadastro from "../../componentes/CabecalhoCadastro/CabecalhoCadastro";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useCadastroUsuarioContext } from "../../contexto/CadastroUsuario";
+import { useEffect } from "react";
 
 const estadosBrasileiros = [
   { text: "Acre", value: "AC" },
@@ -45,12 +46,21 @@ const DadosPessoais = () => {
     setEmail,
     setSenha,
     setSenhaConfirmada,
-    submeterUsuario
+    submeterUsuario,
+    podeEscreverOsDadosPessoais,
   } = useCadastroUsuarioContext();
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!podeEscreverOsDadosPessoais()) {
+      navigate("/cadastro/interesses");
+    }
+  }, [navigate, podeEscreverOsDadosPessoais, usuario]);
 
   const finalizarCadastro = (e) => {
     e.preventDefault();
-    submeterUsuario()
+    submeterUsuario();
   };
 
   return (

@@ -14,6 +14,7 @@ const usuarioInicial = {
 
 export const CadastroUsuarioContext = createContext({
   usuario: usuarioInicial,
+  erros: {},
   setPerfil: () => null,
   setInteresse: () => null,
   setNomeCompleto: () => null,
@@ -23,6 +24,7 @@ export const CadastroUsuarioContext = createContext({
   setSenha: () => null,
   setSenhaConfirmada: () => null,
   submeterUsuario: () => null,
+  possoSelecionarInteresse: () => null,
 });
 
 export const useCadastroUsuarioContext = () => {
@@ -83,8 +85,33 @@ export const CadastroUsuarioProvider = ({ children }) => {
   };
 
   const submeterUsuario = () => {
-    console.log(usuario)
+    if (usuario.senha.length < 8) {
+      setUsuario((estadoAnterior) => {
+        return {
+          ...estadoAnterior,
+          erros: "A senha deve ter mais de 8 caracteres",
+        };
+      });
+      return;
+    }
+    if (usuario.senhaConfirmada.length < 8) {
+      setUsuario((estadoAnterior) => {
+        return {
+          ...estadoAnterior,
+          erros: "A senha deve ter mais de 8 caracteres",
+        };
+      });
+      return;
+    }
     navigate("/cadastro/concluido");
+  };
+
+  const possoSelecionarInteresse = () => {
+    return !!usuario.perfil;
+  };
+
+  const podeEscreverOsDadosPessoais = () => {
+    return !!usuario.interesse;
   };
 
   const contexto = {
@@ -98,6 +125,8 @@ export const CadastroUsuarioProvider = ({ children }) => {
     setSenha,
     setSenhaConfirmada,
     submeterUsuario,
+    possoSelecionarInteresse,
+    podeEscreverOsDadosPessoais,
   };
 
   return (
