@@ -12,6 +12,10 @@ const router = createBrowserRouter([
     element: <LayoutBase />,
     children: [
       {
+        path: "",
+        element: <PaginaInicial />
+      },
+      {
         path: "cadastro",
         element: <LayoutBaseCadastro />,
         children: [
