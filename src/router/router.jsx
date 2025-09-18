@@ -5,6 +5,7 @@ import LayoutBase from "../paginas/LayoutBase";
 import Interesses from "../paginas/cadastro/Interesses";
 import DadosPessoais from "../paginas/cadastro/DadosPessoais";
 import Concluido from "../paginas/cadastro/Concluido";
+import PaginaInicial from "../paginas/PaginaInicial/PaginaInicial";
 
 const router = createBrowserRouter([
   {
